@@ -1,0 +1,15 @@
+id: syslog-detected
+
+info:
+  author: domiee13
+  name: Syslog detection template
+  severity: critical
+  tags: custom, hehe
+requests:
+  - method: GET
+    path: 
+      - "{{BaseURL}}/syslog"
+    matchers:
+      - type: status
+        status:
+          - 200

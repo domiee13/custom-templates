@@ -1,0 +1,17 @@
+--- 
+id: reflected-xss-detection
+info: 
+  author: domiee13
+  name: "Detect reflected xss"
+  severity: medium
+requests: 
+  - 
+    matchers: 
+      - 
+        part: body
+        type: word
+        words: 
+          - "<img src=x onerror=alert(origin)>"
+    method: GET
+    path: 
+      - "{{BaseURL}}<img%20src=x%20onerror=alert(origin)>"
